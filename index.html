@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f7fb">
+  <title>学び舎 | 学生管理</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#home" aria-label="学び舎 ホーム">
+        <span class="brand-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 12.2 16 5l12 7.2v13.1a1.7 1.7 0 0 1-1.7 1.7H5.7A1.7 1.7 0 0 1 4 25.3V12.2Z"/><path d="M11 27V16h10v11M8.5 13h15"/></svg></span>
+        <span class="brand-copy"><strong>学び舎</strong><small>STUDENT PORTAL</small></span>
+      </a>
+      <div class="workspace-switch"><span class="workspace-avatar">青</span><span><strong>青葉学園</strong><small>管理ワークスペース</small></span><svg class="chevron" viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></div>
+      <div class="nav-label">メニュー</div>
+      <nav class="main-nav" aria-label="メインメニュー">
+        <a href="#home" class="nav-item"><span class="nav-icon"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg></span>ダッシュボード</a>
+        <a href="#students" class="nav-item active"><span class="nav-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.3"/><path d="M3.5 19.5v-1.3a5.5 5.5 0 0 1 5.5-5.5h.5a5.5 5.5 0 0 1 5.5 5.5v1.3M16 4.9a3.4 3.4 0 0 1 0 6.5M17 13a5.1 5.1 0 0 1 3.5 4.9v1.6"/></svg></span>学生一覧<span class="nav-count" id="nav-count">08</span></a>
+        <a href="#attendance" class="nav-item"><span class="nav-icon"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M7.5 3v4M16.5 3v4M3.5 9.5h17M8 14l2.2 2.2 5-5"/></svg></span>出欠管理</a>
+        <a href="#classes" class="nav-item"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="m3 8 9-4.5L21 8l-9 4.5L3 8Z"/><path d="M6.5 10v5.2c0 1.6 2.5 3.3 5.5 3.3s5.5-1.7 5.5-3.3V10M21 8v6"/></svg></span>クラス</a>
+        <a href="#reports" class="nav-item"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20V7"/></svg></span>レポート</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="help-card"><span class="help-spark">✳</span><strong>お困りですか？</strong><p>使い方や設定について<br>サポートに相談できます。</p><a href="mailto:support@example.com">ヘルプセンター <span>↗</span></a></div>
+        <button class="profile" type="button"><span class="profile-avatar">田</span><span class="profile-copy"><strong>田中 美咲</strong><small>学校管理者</small></span><span class="dots">···</span></button>
+      </div>
+    </aside>
+
+    <main class="main-area" id="students">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobile-menu" aria-label="メニューを開く"><span></span><span></span><span></span></button>
+        <div class="breadcrumbs"><span>青葉学園</span><span class="crumb-slash">/</span><strong>学生一覧</strong></div>
+        <div class="top-actions"><span class="sync-indicator"><i></i>AWS Emulatorに接続中</span><button class="icon-button" type="button" aria-label="通知"><svg viewBox="0 0 24 24"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg><i class="notification-dot"></i></button><span class="top-avatar">田</span></div>
+      </header>
+
+      <div class="content-wrap">
+        <section class="page-heading">
+          <div><div class="eyebrow"><span class="eyebrow-dot"></span>2026年度 <span class="eyebrow-sep">·</span> 後期</div><h1>学生一覧</h1><p>学生情報を一か所で確認・管理できます。</p></div>
+          <div class="heading-actions"><button class="button button-quiet" id="export-button"><svg viewBox="0 0 20 20"><path d="M10 3v9m0 0 3.5-3.5M10 12 6.5 8.5M4 13v3h12v-3"/></svg>CSVを出力</button><button class="button button-primary" id="add-button"><span class="plus">＋</span>学生を追加</button></div>
+        </section>
+
+        <section class="stats-grid" aria-label="学生統計">
+          <article class="stat-card"><div class="stat-top"><span>在籍学生</span><span class="stat-icon purple"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.5 19v-1a5.5 5.5 0 0 1 11 0v1M16 5a3 3 0 0 1 0 6M17.5 14a4.5 4.5 0 0 1 3 4.3v.7"/></svg></span></div><div class="stat-value" id="stat-total">—</div><div class="stat-foot"><span class="trend-up">↗ 今年度</span>の登録数</div></article>
+          <article class="stat-card"><div class="stat-top"><span>出席率（今月）</span><span class="stat-icon green"><svg viewBox="0 0 24 24"><path d="m5 12 4.3 4.3L19.5 6"/></svg></span></div><div class="stat-value">96.8<span class="stat-unit">%</span></div><div class="stat-foot"><span class="trend-up">↗ 1.2%</span> 前月比</div></article>
+          <article class="stat-card"><div class="stat-top"><span>クラス数</span><span class="stat-icon blue"><svg viewBox="0 0 24 24"><path d="m3 8 9-4.5L21 8l-9 4.5L3 8Z"/><path d="M6.5 10v5.2c0 1.6 2.5 3.3 5.5 3.3s5.5-1.7 5.5-3.3V10"/></svg></span></div><div class="stat-value">4</div><div class="stat-foot">1年A組 〜 3年B組</div></article>
+          <article class="stat-card"><div class="stat-top"><span>確認が必要</span><span class="stat-icon amber"><svg viewBox="0 0 24 24"><path d="M12 3.5 2.8 20h18.4L12 3.5Z"/><path d="M12 9v5m0 2.5v.1"/></svg></span></div><div class="stat-value">3<span class="stat-unit">件</span></div><div class="stat-foot">未確認の連絡・申請</div></article>
+        </section>
+
+        <section class="students-panel">
+          <div class="panel-heading"><div><h2>学生情報</h2><p>登録されている学生の一覧です。</p></div><button class="more-button" aria-label="その他の操作">···</button></div>
+          <div class="table-toolbar"><div class="search-wrap"><svg viewBox="0 0 20 20"><circle cx="8.8" cy="8.8" r="5.8"/><path d="m13 13 4 4"/></svg><input id="search-input" type="search" placeholder="名前、学籍番号で検索" aria-label="学生を検索"></div><div class="toolbar-actions"><label class="select-wrap"><span class="sr-only">クラスで絞り込み</span><select id="class-filter"><option value="all">すべてのクラス</option><option>1年A組</option><option>1年B組</option><option>2年A組</option><option>3年B組</option></select></label><label class="select-wrap status-select"><span class="sr-only">状態で絞り込み</span><select id="status-filter"><option value="all">すべての状態</option><option value="在籍">在籍</option><option value="休学中">休学中</option></select></label><button class="filter-button" id="clear-filters" aria-label="絞り込みをクリア"><svg viewBox="0 0 20 20"><path d="M3 5h14M5.5 10h9M8 15h4"/></svg><span>絞り込み</span></button></div></div>
+          <div class="table-scroll"><table><thead><tr><th><input type="checkbox" id="select-all" aria-label="すべて選択"></th><th>学生</th><th>学籍番号</th><th>クラス</th><th>メールアドレス</th><th>出席率</th><th>ステータス</th><th><span class="sr-only">操作</span></th></tr></thead><tbody id="student-rows"></tbody></table><div class="empty-state" id="empty-state" hidden><span>⌕</span><strong>学生が見つかりません</strong><p>検索条件を変えて、もう一度お試しください。</p></div></div>
+          <div class="table-footer"><span id="result-count">全 0 名</span><div class="pagination"><button class="page-arrow" disabled aria-label="前のページ">‹</button><button class="page-number current">1</button><button class="page-arrow" disabled aria-label="次のページ">›</button><span class="page-size">1ページあたり 10 件</span></div></div>
+        </section>
+        <footer class="page-footer"><span>© 2026 学び舎</span><span><i class="footer-status"></i> AWS Emulator · DynamoDB</span></footer>
+      </div>
+    </main>
+  </div>
+
+  <dialog id="student-dialog" class="student-dialog">
+    <form id="student-form" method="dialog">
+      <div class="dialog-head"><div><span class="dialog-kicker">STUDENT PROFILE</span><h2 id="dialog-title">学生を追加</h2><p>基本情報を入力してください。</p></div><button type="button" class="dialog-close" id="close-dialog" aria-label="閉じる">×</button></div>
+      <input type="hidden" id="editing-id">
+      <div class="form-grid"><label class="form-field"><span>氏名 <b>*</b></span><input id="field-name" required placeholder="例：山田 花子"></label><label class="form-field"><span>学籍番号 <b>*</b></span><input id="field-id" required placeholder="例：A2025009"></label><label class="form-field"><span>クラス <b>*</b></span><select id="field-class" required><option value="">選択してください</option><option>1年A組</option><option>1年B組</option><option>2年A組</option><option>3年B組</option></select></label><label class="form-field"><span>ステータス</span><select id="field-status"><option>在籍</option><option>休学中</option></select></label><label class="form-field full"><span>メールアドレス</span><input id="field-email" type="email" placeholder="student@example.jp"></label></div>
+      <div class="dialog-actions"><button type="button" class="button button-quiet" id="cancel-dialog">キャンセル</button><button type="submit" class="button button-primary" id="save-student">保存する</button></div>
+    </form>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

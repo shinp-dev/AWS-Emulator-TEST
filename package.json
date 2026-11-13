@@ -1,0 +1,13 @@
+{
+  "name": "manabiya-student-manager",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Student management site backed by AWS Emulator and DynamoDB",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.943.0",
+    "@aws-sdk/lib-dynamodb": "^3.943.0"
+  }
+}
