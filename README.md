@@ -2,6 +2,8 @@
 
 AWS Emulator と DynamoDB API を使う学生管理サイトです。アプリは Node.js のバックエンドから Emulator に接続します。デモ学生 8 名は Emulator 上に作成する `Students` テーブルへ初回だけ登録します。
 
+AWS サービス構成とリクエスト経路は [AWS サービス構成ガイド](docs/aws-services.md) を参照してください。
+
 ## Windows で起動
 
 前提: Docker Desktop が起動していること。
